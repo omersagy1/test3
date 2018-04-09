@@ -9,13 +9,13 @@ import {MatCardModule} from '@angular/material/card';
 
 
 import { AppComponent } from './app.component';
-import { EntryComponent } from './entry/entry.component';
+import { EntryListComponent } from './entry-list/entry-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EntryComponent
+    EntryListComponent
   ],
   imports: [
     BrowserModule,

@@ -40,11 +40,11 @@ class Consequence {
 }
 
 @Component({
-  selector: 'narrative-entry',
-  templateUrl: './entry.component.html',
-  styleUrls: ['./entry.component.css']
+  selector: 'entry-list',
+  templateUrl: './entry-list.component.html',
+  styleUrls: ['./entry-list.component.css']
 })
-export class EntryComponent implements OnInit {
+export class EntryListComponent implements OnInit {
 
   narrations: Narration[];
 
