@@ -2,40 +2,46 @@ import { Component, OnInit } from '@angular/core';
 
 class Entry {
 
-  id: number;
-  next: Entry;
+  constructor(
+    public id: number,
+    public next: Entry) {}
 
 }
 
 class Narration {
 
-  text: string;
+  constructor(
+    public text: string) {}
 
 }
 
 class Dialogue {
 
-  speaker: string;
-  text: string;
+  constructor(
+    speaker: string,
+    text: string) {}
 
 }
 
 class Fork {
 
-  choices: Choice[];
+  constructor(
+    choices: Choice[]) {}
 
 }
 
 class Choice {
 
-  text: string;
-  consequence: Consequence;
+  constructor(
+    text: string,
+    consequence: Consequence) {}
 
 }
 
 class Consequence {
 
-  text: string;
+  constructor(
+    text: string) {}
 
 }
 
@@ -54,11 +60,11 @@ export class EntryListComponent implements OnInit {
 
   }
 
-  addEntry(): void {
-    this.narrations.push(new Narration());
+  addNarration(): void {
+    this.narrations.push(new Narration("hello"));
   }
 
-  deleteEntry(i: number): void {
+  deleteNarration(i: number): void {
     this.narrations.splice(i, 1);
   }
 

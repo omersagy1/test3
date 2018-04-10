@@ -2,30 +2,38 @@
 
   <div>
     <p> First entry's text: </p>
-    <p *ngIf="entries.length > 0">
-      {{entries[0].text}}
+    <p *ngIf="narrations.length > 0">
+      {{narrations[0].text}}
     </p>
   </div>
 
   <div class="addition-bar">
-    <button mat-raised-button color="primary" (click)="addEntry()">ADD ENTRY</button>
-    <button mat-raised-button color="primary" (click)="addDialogue()">ADD DIALOGUE</button>
-    <button mat-raised-button color="primary" (click)="addFork()">ADD FORK</button>
+    <button mat-raised-button color="primary" (click)="addNarration()">
+      ADD NARRATION
+    </button>
+
+    <button mat-raised-button color="primary" (click)="addDialogue()">
+      ADD DIALOGUE
+    </button>
+
+    <button mat-raised-button color="primary" (click)="addFork()">
+      ADD FORK
+    </button>
   </div>
 
-  <div *ngFor="let entry of entries; index as i">
+  <div *ngFor="let narration of narrations; index as i">
     <mat-card>
 
       <mat-form-field>
         <textarea matInput placeholder="Autosize textarea"
                   matTextareaAutosize matAutosizeMinRows="2"
                   matAutosizeMaxRows="5"
-                  [(ngModel)]="entry.text"
+                  [(ngModel)]="narration.text"
                   placeholder="textarea...">
         </textarea>
       </mat-form-field>
 
-      <button mat-raised-button color="accent" (click)="deleteEntry(i)">REMOVE</button>
+      <button mat-raised-button color="accent" (click)="deleteNarration(i)">REMOVE</button>
     </mat-card>
   </div>
 
