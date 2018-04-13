@@ -1,49 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-class Entry {
-
-  constructor(
-    public id: number,
-    public next: Entry) {}
-
-}
-
-class Narration {
-
-  constructor(
-    public text: string) {}
-
-}
-
-class Dialogue {
-
-  constructor(
-    speaker: string,
-    text: string) {}
-
-}
-
-class Fork {
-
-  constructor(
-    choices: Choice[]) {}
-
-}
-
-class Choice {
-
-  constructor(
-    text: string,
-    consequence: Consequence) {}
-
-}
-
-class Consequence {
-
-  constructor(
-    text: string) {}
-
-}
+import { Entry, Narration, Dialogue, Fork } from '../structure/structure'
+import { NgSwitch } from '@angular/common';
 
 @Component({
   selector: 'entry-list',
@@ -52,20 +9,36 @@ class Consequence {
 })
 export class EntryListComponent implements OnInit {
 
-  narrations: Narration[];
+  entries: Entry[];
 
   constructor() { 
 
-    this.narrations = [];
+    this.entries = [];
 
   }
 
   addNarration(): void {
-    this.narrations.push(new Narration("hello"));
+    this.entries.push(new Narration("hello"));
   }
 
-  deleteNarration(i: number): void {
-    this.narrations.splice(i, 1);
+  addDialogue(): void {
+    this.entries.push(new Dialogue("Bob", "Yo!"));
+  }
+
+  deleteEntry(i: number): void {
+    this.entries.splice(i, 1);
+  }
+
+  isNarration(e: Entry): boolean {
+    return e instanceof Narration;
+  }
+
+  isDialogue(e: Entry): boolean {
+    return e instanceof Dialogue;
+  }
+
+  isFork(e: Entry): boolean {
+    return e instanceof Fork;
   }
 
   ngOnInit() {

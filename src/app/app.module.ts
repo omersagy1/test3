@@ -10,12 +10,18 @@ import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
+import { NarrationComponent } from './narration/narration.component';
+import { DialogueComponent } from './dialogue/dialogue.component';
+import { ForkComponent } from './fork/fork.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EntryListComponent
+    EntryListComponent,
+    NarrationComponent,
+    DialogueComponent,
+    ForkComponent
   ],
   imports: [
     BrowserModule,

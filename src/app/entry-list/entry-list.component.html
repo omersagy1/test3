@@ -2,8 +2,8 @@
 
   <div>
     <p> First entry's text: </p>
-    <p *ngIf="narrations.length > 0">
-      {{narrations[0].text}}
+    <p *ngIf="entries.length > 0">
+      {{entries[0].text}}
     </p>
   </div>
 
@@ -21,20 +21,20 @@
     </button>
   </div>
 
-  <div *ngFor="let narration of narrations; index as i">
+  <div *ngFor="let entry of entries; index as i">
     <mat-card>
 
-      <mat-form-field>
-        <textarea matInput placeholder="Autosize textarea"
-                  matTextareaAutosize matAutosizeMinRows="2"
-                  matAutosizeMaxRows="5"
-                  [(ngModel)]="narration.text"
-                  placeholder="textarea...">
-        </textarea>
-      </mat-form-field>
+      <app-narration *ngIf="isNarration(entry)" [narration]="entry">
+      </app-narration>
 
-      <button mat-raised-button color="accent" (click)="deleteNarration(i)">REMOVE</button>
+      <app-dialogue *ngIf="isDialogue(entry)" [dialogue]="entry">
+      </app-dialogue>
+
+      <div>
+        <button mat-raised-button color="accent" (click)="deleteEntry(i)">REMOVE
+        </button>
+      </div>
     </mat-card>
-  </div>
+  <div>
 
 </div>
