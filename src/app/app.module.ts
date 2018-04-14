@@ -13,6 +13,8 @@ import { EntryListComponent } from './entry-list/entry-list.component';
 import { NarrationComponent } from './narration/narration.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
 import { ForkComponent } from './fork/fork.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { CharacterListComponent } from './character-list/character-list.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ForkComponent } from './fork/fork.component';
     EntryListComponent,
     NarrationComponent,
     DialogueComponent,
-    ForkComponent
+    ForkComponent,
+    CharacterListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { ForkComponent } from './fork/fork.component';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
