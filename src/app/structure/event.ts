@@ -2,6 +2,7 @@ export { Event }
 
 class Event {
 
-  constructor(text: string) {}
+  constructor(
+    text: string) {}
 
 }

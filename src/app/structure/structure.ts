@@ -13,9 +13,8 @@ class Scene {
 
 class Entry {
 
-  static next_id: number = 0;
-
-  id: number = 0;
+  static next_id = 0;
+  id = 0;
 
   constructor() {
     this.id = Entry.next_id;
