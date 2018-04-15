@@ -2,12 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { CharacterListComponent } from './character-list/character-list.component'
+import { EntryListComponent } from './entry-list/entry-list.component'
+
 const routes: Routes = [
-  { path: 'heroes', component: CharacterList }
+  { path: 'characters', component: CharacterListComponent },
+  { path: 'dialogue/:id', component: EntryListComponent } 
 ];
 
 
 @NgModule({
+  imports: [ 
+    RouterModule.forRoot(routes) 
+  ],
 	exports: [
 		RouterModule
 	]
