@@ -14,9 +14,8 @@ class Building {
     for(let i = 0; i < num_floors; i++) {
       this.floors.push(new Floor(windows_per_floor));
     }
-
   }
-
+  
 }
 
 
