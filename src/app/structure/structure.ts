@@ -13,8 +13,13 @@ class Scene {
 
 class Entry {
 
-  constructor(
-    id: number = 1) {
+  static next_id: number = 0;
+
+  id: number = 0;
+
+  constructor() {
+    this.id = Entry.next_id;
+    Entry.next_id++;
   }
 
 }
@@ -58,6 +63,6 @@ class Choice {
 class Consequence {
 
   constructor(
-    text: string) {}
+    entries: Entry[]) {}
 
 }
