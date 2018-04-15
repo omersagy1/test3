@@ -17,7 +17,8 @@ import { ForkComponent } from './fork/fork.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CharacterListComponent } from './character-list/character-list.component';
 
-import { DatabaseService } from './database.service'
+import { DatabaseService } from './database.service';
+import { CharacterComponent } from './character/character.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DatabaseService } from './database.service'
     NarrationComponent,
     DialogueComponent,
     ForkComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,

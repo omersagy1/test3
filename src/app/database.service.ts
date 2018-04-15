@@ -15,14 +15,27 @@ export class DatabaseService {
     this.database = new Database();
   }
 
+  get characters(): Character[] {
+    return this.database.characters.slice();
+  }
+
+  addCharacter(c: Character) {
+    this.database.characters.push(c);
+  }
+
+  deleteCharacter(c: Character) {
+    let index = this.database.characters.indexOf(c);
+    this.database.characters.splice(index);
+  }
+
 }
 
 
 class Database {
 
   constructor(
-    characters: Character[] = [],
-    scenes: Scene[] = [],
-    events: Event[] = []) {}
+    public characters: Character[] = [],
+    public scenes: Scene[] = [],
+    public events: Event[] = []) {}
 
 }
