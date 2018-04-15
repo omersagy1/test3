@@ -17,6 +17,8 @@ import { ForkComponent } from './fork/fork.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CharacterListComponent } from './character-list/character-list.component';
 
+import { DatabaseService } from './database.service'
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { CharacterListComponent } from './character-list/character-list.componen
     MatCardModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    DatabaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

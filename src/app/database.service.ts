@@ -9,10 +9,11 @@ export class DatabaseService {
 
   database: Database;
 
-  constructor() { 
+  constructor() {}
+
+  ngOnInit() {
     this.database = new Database();
   }
-
 
 }
 
