@@ -9,10 +9,12 @@ export class DatabaseService {
 
   database: Database;
 
-  constructor() {}
+  constructor() {
+    this.database = new Database();
+  }
 
   ngOnInit() {
-    this.database = new Database();
+    // TODO: figure out how to initialize database here?
   }
 
   get characters(): Character[] {

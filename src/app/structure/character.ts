@@ -1,4 +1,4 @@
-export { Character }
+export { Character, AiBehavior }
 
 class Character {
 

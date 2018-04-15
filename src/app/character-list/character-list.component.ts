@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service'
-import { Character } from '../structure/character'
+import { Character, AiBehavior } from '../structure/character'
 
 @Component({
   selector: 'app-character-list',
@@ -11,14 +11,22 @@ export class CharacterListComponent implements OnInit {
 
   characters: Character[];
 
-  constructor(private databaseService: DatabaseService) {}
+  constructor(private database_service: DatabaseService) {}
 
   ngOnInit() {
-    this.characters = this.databaseService.characters;
+    this.characters = this.database_service.characters;
+  }
+
+  addCharacter(): void {
+    this.characters.push(
+      new Character(
+        "fake-name",
+        "red",
+        AiBehavior.WAIT));
   }
 
   deleteCharacter(i: number): void {
-    this.databaseService.deleteCharacter(this.characters[i]);
+    this.database_service.deleteCharacter(this.characters[i]);
     this.characters.splice(i, 1);
   }
 

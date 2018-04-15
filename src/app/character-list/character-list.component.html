@@ -1,7 +1,7 @@
-<div *ngFor="let character of characters; index as i">
+<div class="char-card" *ngFor="let c of characters; index as i">
   <mat-card>
 
-    <app-character [character]="character"></app-character>
+    <app-character [character]="c"></app-character>
 
     <div>
       <button mat-raised-button color="accent"
@@ -10,4 +10,10 @@
       </button>
     </div>
   </mat-card>
-<div>
+</div>
+
+<div class="add-char">
+  <button mat-raised-button color="primary" (click)="addCharacter()">
+    ADD CHARACTER
+  </button>
+</div>
