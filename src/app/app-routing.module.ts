@@ -7,7 +7,7 @@ import { EntryListComponent } from './entry-list/entry-list.component'
 
 const routes: Routes = [
   { path: 'characters', component: CharacterListComponent },
-  { path: 'dialogue/:id', component: EntryListComponent } 
+  { path: 'dialogue', component: EntryListComponent } 
 ];
 
 

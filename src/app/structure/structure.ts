@@ -1,10 +1,20 @@
-export { Entry, Narration, Dialogue, Fork, Choice, Consequence }
+import { Character } from "./character"
+
+export { Scene, Entry, Narration, Dialogue, Fork, Choice, Consequence }
+
+class Scene {
+
+  constructor(
+    entries: Entry[],
+    characters: Character[]) {
+  }
+
+}
 
 class Entry {
 
   constructor(
-    public id: number = 1,
-    public next?: Entry) {
+    id: number = 1) {
   }
 
 }
@@ -12,7 +22,7 @@ class Entry {
 class Narration extends Entry {
 
   constructor(
-    public text: string) {
+    text: string) {
    super(); 
   }
 
